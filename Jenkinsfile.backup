@@ -3,8 +3,8 @@ pipeline {
     label "jenkins-python"
   }
   environment {
-    ORG = 'anujsaxenagit'
-    APP_NAME = 'python-gatekeeper-3'
+    ORG = 'anuj'
+    APP_NAME = 'python-gatekeeper-2'
     CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
   }
   stages {
@@ -56,7 +56,7 @@ pipeline {
       }
       steps {
         container('python') {
-          dir('./charts/python-gatekeeper-3') {
+          dir('./charts/python-gatekeeper-2') {
             sh "jx step changelog --version v\$(cat ../../VERSION)"
 
             // release the helm chart
